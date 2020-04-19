@@ -13,11 +13,11 @@ import (
 )
 
 type User struct {
-	ID        uint32    `gorm:"primary_key;auto_increment" json:"id"`
-	Name  string    `gorm:"size:255;not null;unique" json:"name"`
-	Email     string    `gorm:"size:100;not null;unique" json:"email"`
-	Password  string    `gorm:"size:100;not null;" json:"password"`
-	CreationTime time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"creation_time"`
+	ID       		 uint32    `gorm:"primary_key;auto_increment" json:"id"`
+	Name  			 string    `gorm:"size:255;not null;unique" json:"name"`
+	Email  		     string    `gorm:"size:100;not null;unique" json:"email"`
+	Password 		 string    `gorm:"size:100;not null;" json:"password"`
+	CreationTime 	 time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"creation_time"`
 	LastModificationTime time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"last_modification_time"`
 }
 
