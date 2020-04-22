@@ -2,6 +2,8 @@ package middlewares
 
 import (
 	"errors"
+	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/nihatakin/powerPlantManagement/api/auth"
@@ -22,6 +24,14 @@ func SetMiddlewareAuthentication(next http.HandlerFunc) http.HandlerFunc {
 			responses.ERROR(w, http.StatusUnauthorized, errors.New("Unauthorized"))
 			return
 		}
+		next(w, r)
+	}
+}
+
+func SetMiddlewareLogger(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("")
+		log.Printf("%s %s%s %s", r.Method, r.Host, r.RequestURI, r.Proto)
 		next(w, r)
 	}
 }

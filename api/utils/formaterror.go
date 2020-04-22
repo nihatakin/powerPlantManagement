@@ -7,7 +7,6 @@ import (
 
 //TODO eksik kaldı burası doldurmak gerekiyor.
 func FormatError(err string) error {
-
 	if strings.Contains(err, "name") {
 		return errors.New("Name Already Taken")
 	}

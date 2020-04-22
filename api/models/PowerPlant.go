@@ -21,7 +21,7 @@ type PowerPlant struct {
 	CreatorUserId        uint32    `gorm:"not null" json:"creator_user_id"`
 	ModifierUser         User      `json:"modifier_user"`
 	LastModificationTime time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"last_modification_time"`
-	LastModifierUserId   uint32    `gorm:json:"last_modifier_user_id"`
+	LastModifierUserId   uint32	   `gorm:"not null;default:0;" json:"last_modifier_user_id"`
 }
 
 func (p *PowerPlant) PrepareForCreate() {

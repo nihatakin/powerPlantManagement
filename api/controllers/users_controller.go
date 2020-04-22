@@ -12,7 +12,7 @@ import (
 	"github.com/nihatakin/powerPlantManagement/api/auth"
 	"github.com/nihatakin/powerPlantManagement/api/models"
 	"github.com/nihatakin/powerPlantManagement/api/responses"
-	"github.com/nihatakin/powerPlantManagement/api/utils/formaterror"
+	"github.com/nihatakin/powerPlantManagement/api/utils"
 )
 
 func (server *Server) CreateUser(w http.ResponseWriter, r *http.Request) {
